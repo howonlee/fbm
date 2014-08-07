@@ -9,7 +9,7 @@ def is_pos_def(x):
 def is_sym(x):
 	return (x.transpose(1, 0) == x).all()
 
-#now, turn this into a markov chain
+#use cumsum and turn into markov chain eventually
 if __name__ == "__main__":
 	dim_len = 1000
 	times = range(1, dim_len + 1)
