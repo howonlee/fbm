@@ -1,5 +1,6 @@
 import numpy as np
 import numpy.linalg as np_lin
+import numpy.random as np_rand
 
 def is_pos_def(x):
 	return np.all(np.linalg.eigvals(x) > 0)
@@ -18,6 +19,6 @@ if __name__ == "__main__":
 	#print is_pos_def(gamma)
 	#print is_sym(gamma)
 	sigma = np_lin.cholesky(gamma)
-	vec = gaussian distribution
-	u = sigma times vec
-	print u #graph u also
+	vec = np_rand.normal(size=(100,))
+	u = np.dot(sigma, vec)
+	print u
