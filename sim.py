@@ -9,6 +9,7 @@ def is_pos_def(x):
 def is_sym(x):
 	return (x.transpose(1, 0) == x).all()
 
+#now, turn this into a markov chain
 if __name__ == "__main__":
 	dim_len = 1000
 	times = range(1, dim_len + 1)
@@ -23,5 +24,5 @@ if __name__ == "__main__":
 	sigma = np_lin.cholesky(gamma)
 	vec = np_rand.normal(size=(dim_len,))
 	u = np.dot(sigma, vec)
-	plt.plot(range(dim_len), u, 'r-')
+	plt.plot(range(dim_len), u, 'b-')
 	plt.show()
