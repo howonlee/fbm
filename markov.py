@@ -15,5 +15,5 @@ if __name__ == "__main__":
 	corpus_cts = collections.Counter(corpus).most_common()
 	len_corpus = len(corpus_cts)
 	order_1 = sci_sp.dok_matrix((len_corpus, len_corpus), dtype=np.float32)
-	print order_1.shape
+	print order_1.shape #how to index into this thing?
 
