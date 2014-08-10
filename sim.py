@@ -45,6 +45,10 @@ if __name__ == "__main__":
 		plt.plot(range(dim_len), u, 'b-')
 		plt.show()
 	else:
+		"""
+		This sort of requires arithmetic coding
+		Which requires in and of itself a lot of bit-fuckery
+		"""
 		corpus = get_corpus("corpus.txt")
 		len_corpus = len(corpus)
 		u = np.ceil(u * len_corpus).astype(int).tolist()
