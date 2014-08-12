@@ -1,4 +1,6 @@
+import matplotlib as mp
 import matplotlib.pyplot as plt
+import numpy as np
 
 def get_corpus(filename):
 	corpus = []
@@ -8,6 +10,9 @@ def get_corpus(filename):
 	return corpus
 
 if __name__ == "__main__":
+	mp.rcParams['axes.linewidth'] = .01
+	mp.rcParams['lines.linewidth'] = .01
+	mp.rcParams['patch.linewidth'] = .01
 	corpus = get_corpus("corpus.txt")
 	idx_arr = []
 	idx_dict = {}
@@ -15,6 +20,7 @@ if __name__ == "__main__":
 		if word not in idx_dict:
 			idx_dict[word] = i
 		idx_arr.append(idx_dict[word])
-	plt.plot(range(len(idx_arr)), idx_arr, 'b-')
+	#print idx_arr[0:1000]
+	plt.plot(idx_arr)
 	plt.show()
 
