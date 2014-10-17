@@ -1,6 +1,7 @@
 import matplotlib as mp
 import matplotlib.pyplot as plt
 import numpy as np
+from random import shuffle
 
 def get_corpus(filename):
 	corpus = []
@@ -10,9 +11,9 @@ def get_corpus(filename):
 	return corpus
 
 if __name__ == "__main__":
-	mp.rcParams['axes.linewidth'] = .01
-	mp.rcParams['lines.linewidth'] = .01
-	mp.rcParams['patch.linewidth'] = .01
+	mp.rcParams['axes.linewidth'] = 1
+	mp.rcParams['lines.linewidth'] = 1
+	mp.rcParams['patch.linewidth'] = 1
 	corpus = get_corpus("corpus.txt")
 	idx_arr = []
 	idx_dict = {}
@@ -20,7 +21,8 @@ if __name__ == "__main__":
 		if word not in idx_dict:
 			idx_dict[word] = i
 		idx_arr.append(idx_dict[word])
-	#print idx_arr[0:1000]
-	plt.plot(idx_arr)
+	idx_arr = idx_arr[10000:10100]
+	#shuffle(idx_arr)
+	plt.plot(idx_arr, "ro")
 	plt.show()
 
